@@ -8,7 +8,9 @@
 <meta property="og:title" content="다달쌤 한다은 | 에듀테크·AI로 여는 독서교육">
 <meta property="og:description" content="사서교사 한다은의 강의·원고·수업 포트폴리오">
 <meta property="og:image" content="images/dadal-reading.jpg">
-<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="images/favicon.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
@@ -36,6 +38,10 @@
   --lh-tight:1.25; --lh-snug:1.45; --lh-body:1.65;
   /* 모서리 */
   --r-sm:8px; --r-md:16px; --r-lg:24px; --r-pill:999px;
+  /* 그림자: 빛은 위에서 (§6.1, §6.2.1) */
+  --shadow-sm:0 1px 2px rgba(31,42,46,.06),0 2px 6px rgba(31,42,46,.06);
+  --shadow-md:0 4px 8px rgba(31,42,46,.06),0 12px 24px rgba(31,42,46,.08);
+  --shadow-lg:0 18px 40px rgba(31,77,69,.18);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
@@ -72,12 +78,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:5
 .btn.primary{background:var(--green);color:var(--text-on-dark)}
 .btn.ghost{border:1.5px solid var(--green);color:var(--text-brand)}
 .photo{position:relative;justify-self:center;max-width:340px;width:100%}
-.photo img{border-radius:var(--r-lg);aspect-ratio:1;object-fit:cover;width:100%;box-shadow:0 18px 40px rgba(31,77,69,.18)}
+.photo img{border-radius:var(--r-lg);aspect-ratio:1;object-fit:cover;width:100%;box-shadow:var(--shadow-lg)}
 .photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:var(--r-lg);background:var(--orange-soft);z-index:-1}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:20px 22px}
+.stat{background:var(--card);box-shadow:var(--shadow-sm);border-radius:var(--r-md);padding:20px 22px}
 .stat b{display:block;font-family:"Gowun Batang",serif;font-size:var(--fs-2xl);color:var(--text-brand);line-height:var(--lh-tight)}
 .stat span{font-size:var(--fs-sm);color:var(--text-muted)}
 
@@ -99,23 +105,23 @@ section{padding:64px 0}
 .year{display:grid;grid-template-columns:90px 1fr;gap:20px;margin-bottom:26px}
 .year h3{font-family:"Gowun Batang",serif;font-size:var(--fs-xl);line-height:var(--lh-tight);color:var(--text-brand);padding-top:10px}
 .lect{display:grid;gap:10px}
-.lect li{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 18px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 14px}
+.lect li{list-style:none;background:var(--card);box-shadow:var(--shadow-sm);border-radius:var(--r-md);padding:14px 18px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 14px}
 .lect strong{font-size:var(--fs-base)}
 .lect .org{display:block;font-size:var(--fs-sm);color:var(--text-muted);font-weight:var(--fw-normal)}
 .lect .topic{font-size:var(--fs-sm);color:var(--text-muted)}
-.highlight{background:var(--green);color:var(--text-on-dark);border-radius:var(--r-md);padding:18px 22px;margin-bottom:28px;font-weight:var(--fw-bold)}
-.highlight b{color:var(--text-on-dark-accent)}
+.highlight{background:var(--green-soft);color:var(--text);border-left:4px solid var(--green);border-radius:var(--r-sm);padding:14px 18px;margin-bottom:28px}
+.highlight b{color:var(--text-brand)}
 
 .honors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
-.honor{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:20px}
+.honor{background:var(--card);box-shadow:var(--shadow-sm);border-radius:var(--r-md);padding:20px}
 .honor .yr{font-size:var(--fs-xs);font-weight:var(--fw-bold);color:var(--text-accent)}
 .honor h4{font-size:var(--fs-base);margin-top:4px}
 h3.sub{font-family:"Gowun Batang",serif;color:var(--text-brand);font-size:var(--fs-lg);line-height:var(--lh-tight);margin:40px 0 6px}
 
 /* writings */
 .writings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.wcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .2s,box-shadow .2s}
-a.wcard:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.08)}
+.wcard{background:var(--card);box-shadow:var(--shadow-sm);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .2s,box-shadow .2s}
+a.wcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .wcard img{aspect-ratio:16/10;object-fit:cover;width:100%;background:var(--green-soft)}
 .wcard .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
 .wcard .meta{font-size:var(--fs-sm);color:var(--text-muted);font-weight:var(--fw-normal)}
@@ -129,9 +135,12 @@ a.wcard:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.08)}
 .group-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .group-head h3{font-family:"Gowun Batang",serif;font-size:var(--fs-lg);line-height:var(--lh-tight);color:var(--text-brand)}
 .programs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.pcard{background:var(--card);box-shadow:var(--shadow-sm);border-radius:var(--r-md);overflow:hidden}
 .pcard img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--green-soft)}
-.pcard .noimg{aspect-ratio:4/3;display:grid;place-items:center;font-size:var(--fs-3xl);background:var(--green-soft)}
+.pcard .noimg{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:var(--green-soft);color:var(--text-brand)}
+.pcard .noimg span{font-size:var(--fs-3xl);line-height:1}
+.pcard .noimg small{font-size:var(--fs-sm);font-weight:var(--fw-bold)}
+.pcard .noimg.ai{background:var(--orange-soft);color:var(--text-accent)}
 .pcard .body{padding:14px 16px 18px}
 .pcard h4{font-size:var(--fs-base);line-height:var(--lh-snug);margin-bottom:4px}
 .pcard p{font-size:var(--fs-sm);color:var(--text-muted)}
@@ -169,7 +178,8 @@ footer{text-align:center;font-size:var(--fs-sm);color:var(--text-muted);padding:
   .pcard .body{padding:10px 12px 14px}
   .pcard h4{font-size:var(--fs-sm)}
   .pcard p{font-size:var(--fs-xs);line-height:1.5}
-  .pcard .noimg{font-size:var(--fs-2xl)}
+  .pcard .noimg span{font-size:var(--fs-2xl)}
+  .pcard .noimg small{font-size:var(--fs-xs)}
   .group{margin-bottom:32px}
 }
 </style>
@@ -231,9 +241,9 @@ footer{text-align:center;font-size:var(--fs-sm);color:var(--text-muted);padding:
     <div class="year">
       <h3>2026</h3>
       <ul class="lect">
-        <li><div><strong>정교사(1급) 자격연수 사서과정</strong><span class="org">대진대학교</span></div><span class="tag edutech">에듀테크·AI 독서교육</span></li>
-        <li><div><strong>수원 사서교사 연구회 강의</strong><span class="org">수원 사서교사 연구회</span></div><span class="tag edutech">에듀테크·AI 독서교육</span></li>
-        <li><div><strong>안성 사서교사 연구회 강의</strong><span class="org">안성 사서교사 연구회</span></div><span class="tag edutech">에듀테크·AI 독서교육</span></li>
+        <li><div><strong>정교사(1급) 자격연수 사서과정</strong><span class="org">대진대학교</span></div></li>
+        <li><div><strong>수원 사서교사 연구회 강의</strong><span class="org">수원 사서교사 연구회</span></div></li>
+        <li><div><strong>안성 사서교사 연구회 강의</strong><span class="org">안성 사서교사 연구회</span></div></li>
       </ul>
     </div>
     <div class="year">
@@ -264,7 +274,7 @@ footer{text-align:center;font-size:var(--fs-sm);color:var(--text-muted);padding:
     </div>
     <div class="writings">
       <a class="wcard" href="https://www.te.co.kr/mobile/article.html?no=28991" target="_blank" rel="noopener">
-        <img src="images/ai-app-lesson.jpg" alt="제미나이로 고민상담 어플 만들기 수업 화면">
+        <img src="images/ai-app-card.jpg" alt="학생이 제미나이로 만든 'MBTI 비밀 상담소' 앱 화면" style="object-position:top">
         <div class="body">
           <span class="meta">더에듀 · 2026.06 · [사서교사의 독서교육] ②</span>
           <h4>"'돌 씹어 먹는 아이'의 주인공과 고민을 나눠요!"</h4>
@@ -284,7 +294,7 @@ footer{text-align:center;font-size:var(--fs-sm);color:var(--text-muted);padding:
         </div>
       </a>
       <div class="wcard">
-        <img src="images/dokkaebi-phone.jpg" alt="도깨비 폰을 개통하시겠습니까 활동지" style="object-position:top">
+        <img src="images/dokkaebi-wide.jpg" alt="도깨비 폰을 개통하시겠습니까 활동지">
         <div class="body">
           <span class="meta">경기 솔솔 독서바람</span>
           <h4>책(R)에서 앱(A)과 활동(S)으로 이어진 도깨비폰 수업</h4>
@@ -318,10 +328,10 @@ footer{text-align:center;font-size:var(--fs-sm);color:var(--text-muted);padding:
     <div class="group">
       <div class="group-head"><span class="tag ai">AI</span><h3>AI와 함께하는 독후활동</h3></div>
       <div class="programs">
-        <div class="pcard"><img src="images/ai-app-student.jpg" alt="학생이 만든 상담 어플 화면"><div class="body"><h4>『돌 씹어 먹는 아이』 고민상담 어플</h4><p>제미나이로 주인공의 비밀과 고민을 들어주는 나만의 앱 만들기</p></div></div>
-        <div class="pcard"><img src="images/dokkaebi-phone.jpg" alt="도깨비폰 활동지" style="object-position:top"><div class="body"><h4>도깨비 폰을 개통하시겠습니까?</h4><p>책 속 도깨비 폰을 상상해 앱으로 설계하는 RAS 융합 수업</p></div></div>
-        <div class="pcard"><div class="noimg">🌍</div><div class="body"><h4>왜왜왜 동아리 · 온라인 환경 행진</h4><p>환경 책을 읽고 AI로 온라인 행진 광장과 포스터 만들기</p></div></div>
-        <div class="pcard"><div class="noimg">🎵</div><div class="body"><h4>AI 북플리</h4><p>책의 주제를 담은 노래를 생성 AI로 만들어 보는 활동</p></div></div>
+        <div class="pcard"><img src="images/ai-app-dialog.jpg" alt="학생이 만든 상담 어플의 '발견된 진심' 화면"><div class="body"><h4>『돌 씹어 먹는 아이』 고민상담 어플</h4><p>제미나이로 주인공의 비밀과 고민을 들어주는 나만의 앱 만들기</p></div></div>
+        <div class="pcard"><img src="images/dokkaebi-43.jpg" alt="도깨비폰 활동지"><div class="body"><h4>도깨비 폰을 개통하시겠습니까?</h4><p>책 속 도깨비 폰을 상상해 앱으로 설계하는 RAS 융합 수업</p></div></div>
+        <div class="pcard"><img src="images/whywhy.jpg" alt="왜왜왜 동아리 진실을 밝혀라 활동지"><div class="body"><h4>왜왜왜 동아리 · 온라인 환경 행진</h4><p>환경 책을 읽고 AI로 온라인 행진 광장과 포스터 만들기</p></div></div>
+        <div class="pcard"><div class="noimg ai" aria-hidden="true"><span>🎵</span><small>AI가 부르는 책 노래</small></div><div class="body"><h4>AI 북플리</h4><p>책의 주제를 담은 노래를 생성 AI로 만들어 보는 활동</p></div></div>
       </div>
     </div>
 
@@ -331,9 +341,9 @@ footer{text-align:center;font-size:var(--fs-sm);color:var(--text-muted);padding:
         <div class="pcard"><img src="images/reading-month-2026.jpg" alt="2026 9월 독서의 달 프로그램" style="object-position:top"><div class="body"><h4>9월 독서의 달</h4><p>북크닉, 책 처방, 금쪽상담소 등 해마다 새롭게 여는 독서 축제</p></div></div>
         <div class="pcard"><img src="images/light-picture.jpg" alt="빛그림 공연"><div class="body"><h4>빛그림 공연</h4><p>그림책을 큰 화면과 낭독으로 함께 감상하는 공연</p></div></div>
         <div class="pcard"><img src="images/bigdata-awards.jpg" alt="빅데이터로 알아보는 도서관 어워즈"><div class="body"><h4>빅데이터로 알아보는 도서관 어워즈</h4><p>독서기록 300여 개를 분석해 올해의 단어와 책을 뽑아요.</p></div></div>
-        <div class="pcard"><div class="noimg">✏️</div><div class="body"><h4>동화작가 동아리 · 학생 책쓰기</h4><p>스토리보드부터 그림까지, 학생이 직접 동화책을 만드는 프로젝트</p></div></div>
+        <div class="pcard"><div class="noimg read" aria-hidden="true"><span>✏️</span><small>우리가 쓴 동화책</small></div><div class="body"><h4>동화작가 동아리 · 학생 책쓰기</h4><p>스토리보드부터 그림까지, 학생이 직접 동화책을 만드는 프로젝트</p></div></div>
         <div class="pcard"><img src="images/book-cafe.jpg" alt="도서부 카페 포스터" style="object-position:top"><div class="body"><h4>도서부 카페</h4><p>도서부 학생들이 직접 여는 책과 음료가 있는 도서관 카페</p></div></div>
-        <div class="pcard"><div class="noimg">🖌️</div><div class="body"><h4>한석봉을 찾습니다 · 북돋움 챌린지</h4><p>글씨 쓰기, 책 추천, 독서 챌린지로 이어지는 학교 독서 캠페인</p></div></div>
+        <div class="pcard"><img src="images/handwriting.jpg" alt="마음챙김 손글씨 대회 필사 추천도서 포스터"><div class="body"><h4>한석봉을 찾습니다 · 북돋움 챌린지</h4><p>글씨 쓰기, 책 추천, 독서 챌린지로 이어지는 학교 독서 캠페인</p></div></div>
       </div>
     </div>
   </div>
