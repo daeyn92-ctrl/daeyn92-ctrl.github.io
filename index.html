@@ -130,6 +130,16 @@ a.wcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .wcard .more{margin-top:auto;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--text-brand)}
 .wcard .more.off{color:var(--text-muted);font-weight:var(--fw-normal)}
 
+/* featured booth link */
+.feature{display:flex;align-items:center;gap:20px;background:var(--card);box-shadow:var(--shadow-sm);border-left:4px solid var(--orange);border-radius:var(--r-md);padding:20px 24px;margin-bottom:44px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.feature:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.feature-icon{flex:none;width:56px;height:56px;border-radius:50%;background:var(--orange-soft);display:grid;place-items:center;font-size:var(--fs-xl)}
+.feature-body{flex:1;min-width:0}
+.feature-meta{font-size:var(--fs-xs);font-weight:var(--fw-bold);color:var(--text-accent)}
+.feature h3{font-family:"Gowun Batang",serif;font-size:var(--fs-lg);line-height:var(--lh-tight);color:var(--text-brand);margin:2px 0 6px}
+.feature p{font-size:var(--fs-sm);color:var(--text-muted)}
+.feature-more{flex:none;font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--text-on-dark);background:var(--green);padding:10px 16px;border-radius:var(--r-sm);white-space:nowrap}
+
 /* programs */
 .group{margin-bottom:44px}
 .group-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
@@ -181,6 +191,10 @@ footer{text-align:center;font-size:var(--fs-sm);color:var(--text-muted);padding:
   .pcard .noimg span{font-size:var(--fs-2xl)}
   .pcard .noimg small{font-size:var(--fs-xs)}
   .group{margin-bottom:32px}
+  .feature{flex-wrap:wrap;gap:14px;padding:18px;margin-bottom:32px}
+  .feature-icon{width:44px;height:44px;font-size:var(--fs-lg)}
+  .feature-body{flex-basis:calc(100% - 58px)}
+  .feature-more{width:100%;text-align:center}
 }
 </style>
 </head>
@@ -314,6 +328,16 @@ footer{text-align:center;font-size:var(--fs-sm);color:var(--text-muted);padding:
       <h2>수업 · 프로그램</h2>
       <p>도서관에서 실제로 운영한 수업과 행사입니다.</p>
     </div>
+
+    <a class="feature" href="https://daeyn92-ctrl.github.io/itda-books/" target="_blank" rel="noopener">
+      <span class="feature-icon" aria-hidden="true">🎪</span>
+      <div class="feature-body">
+        <span class="feature-meta">2026 용인 RAS 성장 나눔 페스타 부스</span>
+        <h3>용인 이동초 잇다(IT-DA) 북스</h3>
+        <p>책으로 하나되는 이동: 디지털과 아날로그를 잇는 학교도서관. 메타버스 도서관, 온책읽기 방탈출, 학년별 수업 자료를 한곳에 모았어요.</p>
+      </div>
+      <span class="feature-more">부스 사이트 보기 →</span>
+    </a>
 
     <div class="group">
       <div class="group-head"><span class="tag edutech">에듀테크</span><h3>메타버스로 넓힌 도서관</h3></div>
